@@ -1,0 +1,4 @@
+idf_component_register(SRCS "ad5940.c"
+                    INCLUDE_DIRS "include")
+set_target_properties(${COMPONENT_LIB} PROPERTIES COMPILE_FLAGS "-Wno-maybe-uninitialized -Wno-overflow")
+set_property(TARGET ${COMPONENT_LIB} APPEND PROPERTY LINK_INTERFACE_MULTIPLICITY 3)
