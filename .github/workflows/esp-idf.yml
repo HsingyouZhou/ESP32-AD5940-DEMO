@@ -1,0 +1,22 @@
+name: ESP-IDF Build Action
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+    - name: Espressif (ESP-IDF) Build Action
+      uses: HareshPrajapati/esp_idf_build_action@V2
+      with:
+        esp_idf_version: 'latest'
+        target: esp32
+        path: '.'
