@@ -146,6 +146,7 @@ void app_main(void)
       //AppBIAInit(0, 0);    /* Re-initialize BIA application. Because sequences are ready, no need to provide a buffer, which is used to store sequencer commands */
       //AppBIACtrl(BIACTRL_START, 0);          /* Control BIA measurement to start. Second parameter has no meaning with this command. */
     }
+    vTaskDelay(1); /* Let other tasks run */
   }
 }
 
